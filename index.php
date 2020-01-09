@@ -103,7 +103,7 @@ legend.scheduler-border
 	
 	<div class="row" style="margin-left:1%; ">
 		<div style="<?php if($_SESSION['perfil'] == 1){echo 'display:block;';}else{echo 'display:none;';}?>; width:50%; float:left;">
-			<input type="button" value="Novo" id="btn_novo"  class="btn btn-dark"  style="width:32.8%;" onclick="window.location.href = 'index.html'">
+			<input type="button" value="Novo" id="btn_novo"  class="btn btn-dark"  style="width:32.8%;" onclick="window.location.href = 'index.php'">
 			<input type="button" value="Salvar" id="btn_salvar"  class="btn btn-dark" style="width:32.8%;"  onclick="if(Validar())Finalizar(1);">
 			<input type="button" value="Alterar" id="btn_alterar" class="btn btn-dark" style="width:32.8%;" onclick="Finalizar(2);">
 		</div>
