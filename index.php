@@ -10,7 +10,7 @@ if(!isset($_SESSION['login']))
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Cadastro de cliente</title>
+        <title>Cadastro de colaborador</title>
         <meta charset="UTF-8">
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
 <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
