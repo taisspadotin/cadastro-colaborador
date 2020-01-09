@@ -70,7 +70,7 @@ class PDF extends FPDF {
         $this->Ln();
 		$l=6;
         $this->SetTextColor(255,255,255);
-        $this->Cell(190,$l, utf8_decode('Relatório de cadastro de clientes'),1,0,'C',1);
+        $this->Cell(190,$l, utf8_decode('Relatório de cadastro de colaboradores'),1,0,'C',1);
         $this->Ln();
 		$this->Ln();
 
@@ -90,7 +90,7 @@ $l=5;
  $pdf->SetFillColor(232,232,232);
        $pdf->SetTextColor(0,0,0);
         $pdf->SetFont('Arial','B',8);
-        $pdf->Cell(70,$l,'Nome do cliente',1,0,'L',1);
+        $pdf->Cell(70,$l,'Nome do colaborador',1,0,'L',1);
         $pdf->Cell(30,$l,'Data de nascimento',1,0,'l',1);
         $pdf->Cell(90,$l,utf8_decode('Breve Descrição'),1,0,'C',1);
         $pdf->Ln();
