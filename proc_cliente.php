@@ -30,7 +30,7 @@ if($acao == 1)//salvar
 		$msg = "There was a problem uploading image";
 	}
 	
-	$sql = "INSERT INTO clientes(nome, data_nasc, breve_desc, foto) values ('$nome', $data_nasc, '$breve_desc','$image')";
+	$sql = "INSERT INTO clientes(nome, data_nasc, breve_desc, foto) values ('$nome', '$data_nasc', '$breve_desc','$image')";
 	//die($sql);
 	mysqli_query($db, $sql) or die('erro na insercao');
 }
@@ -64,5 +64,5 @@ else if($acao == 3)//deletar
 	mysqli_query($db, $sql) or die('erro ao deletar o registro');
 }
 
-header('Location:index.html');
+header('Location:index.php');
 ?>

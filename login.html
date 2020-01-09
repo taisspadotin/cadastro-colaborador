@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8">
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+<script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
+$(function() {
+
+});
+function entrar()
+{
+
+obj = document.frm_login;
+var usuario =obj.usuario.value;
+var senha = obj.senha.value;
+
+if(obj.usuario.value == '')
+{
+alert('Favor preencher o usuário');
+obj.usuario.focus();
+return false;
+}
+else if(obj.senha.value == '')
+{
+alert('Favor preencher a senha');
+obj.senha.focus();
+return false;
+}
+else
+{
+$.ajax({
+
+    method: "POST",
+    url: "ajax_login.php",
+    data: {
+		'usuario': usuario, 
+		'senha': senha
+		},
+	success: function(data) 
+		{
+			if(data == 1)//Login realizado
+			{
+			window.location.href = "index.php";
+			}
+			else if(data == 0)
+			{
+			alert('Login incorreto!\nVerifique seu usuário e senha');
+			obj.usuario.focus();
+			}
+		}	
+   })
+//var data =0;
+//obj.submit();
+//FAZER AJAX que verifica a senha
+//funcao data:
+
+}
+
+}
+
+
+</script>
+<style>
+input[type=button]
+{
+width:30%;
+}
+fieldset.scheduler-border {
+border: 1px groove #ddd !important;
+padding: 0 1.4em 1.4em 1.4em !important;
+margin: 0 0 1.5em 0 !important;
+-webkit-box-shadow:  0px 0px 0px 0px #000;
+box-shadow:  0px 0px 0px 0px #000;
+
+}
+
+legend.scheduler-border {
+font-size: 1.2em !important;
+font-weight: bold !important;
+text-align: left !important;
+border:none;
+width:10%;
+}
+
+
+
+</style>
+ 
+    </head>
+<form id="frm_login" name="frm_login" action="" method="POST">
+    <body style="background:#FAF9F9; align:left; text-align:left;">
+
+<!--Barra de navegação-->
+<nav class="navbar navbar-inverse">
+ <div class="container-fluid">
+<div class="navbar-header">
+ <a class="navbar-brand" href="#">Login</a>
+</div>
+<ul class="nav navbar-nav">
+ <li class="active"><a href="#">Home</a></li>
+</ul>
+ </div>
+</nav>
+
+    <!--Conteudo-->
+<div id="conteudo" style="margin-left:1%; text-align:center; align:center; margin-left:30%; width:40%; float:center;"> 
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Entrar:</legend>
+ <div class="row">
+<label for="usuario">Usuário</label><br>
+<input type="text" id="usuario" class="form-control form-control-sm" style="width:80%; margin-left:10%;">
+<br>
+<label for="senha">Senha</label><br>
+<input type="password" id="senha" class="form-control form-control-sm" style="width:80%; margin-left:10%;">
+
+</div>
+<br><br><br>
+<input type="button" value="Login" id="btn_entrar"  class="btn btn-dark"  onclick="entrar();">
+
+</fieldset>
+</div>
+
+
+
+    </body>
+</form>
+</html>
+
+
